@@ -1,19 +1,15 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Button from '../components/Button'
-
-
+import React from "react";
+import { Link } from 'react-router-dom';
+import Button from "../components/Button";
 
 function Welcome() {
   return (
     <div>
-      <Routes>
-
-        <Route path="/" element={<Button>Login</Button>} />
-      </Routes>
+      <img src="/src/images/WelcomeImage.jpg" alt="welcome"></img>
+      
+      <Link to="/login"><Button>Login</Button></Link>
     </div>
-  )
+  );
 }
 
-export default Welcome
-
+export default Welcome;
