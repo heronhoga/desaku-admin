@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'BentonSansBold';
+    src: url('/src/fonts/benton-sans-bold.woff') format('woff');
+}
+
+.custom-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 32px;
+  margin: 4px 2px;
+  cursor: pointer;
+  padding: 10px 24px;
+  font-family: 'BentonSansBold', sans-serif;
+  border-radius: 15px;
+}
