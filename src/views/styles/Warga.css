@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.wargaNav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+table {
+    width: 90%; /* reduced the width to 90% */
+    border-collapse: collapse;
+    border-radius: 15px; /* added border-radius property to make corners rounded */
+    margin: auto; /* added margin property to center the table horizontally */
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #7fc77f9d;
+}
+
+.upBtn {
+    margin-bottom: 5px;
+}
+
+.searchBar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
