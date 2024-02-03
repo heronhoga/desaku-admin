@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'BentonSansBold';
+    src: url('/src/fonts/benton-sans-bold.woff') format('woff');
+  }
+
+* {
+    font-family: 'BentonSansBold', sans-serif;
+}
+
+
+.card {
+  width: 300px;
+  padding: 20px;
+  margin: 0 auto; /* centers the card */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* optional: adds a shadow to the card */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 15px;
+}
+
+.form-group button {
+  width: 100%;
+  padding: 10px;
+  background-color: #36F179;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.form-group button:hover {
+  background-color: #6CEF9B;
+}

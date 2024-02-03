@@ -1,7 +1,52 @@
-* {
-  box-sizing: border-box;
+nav {
+  background-color: rgba(0, 0, 0, 0.575);
+  display: flex;
+  justify-content: space-between; 
+  width: 100%; 
+  padding-top: 15px;
+  padding-bottom: 15px;
+  transition: background-color 0.5s ease; /* Add transition for a smooth color change */
 }
-body {
-    margin: 0;
+
+nav:hover {
+  background-color: white; /* Navbar turns white on hover */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li.logout {
+  margin-left: auto; /* Push the logout button to the right */
+  color: red;
+}
+
+nav ul li a {
+  font-size: 25px; 
+  color: #36F179; 
+  text-decoration: none; 
+}
+
+nav ul li a:hover {
+  color: rgb(13, 206, 212); /* Text turns to original navbar color on hover */
+}
+
+nav ul li.logout a {
+  color: rgb(250, 250, 250);
+}
+
+nav ul li.logout a:hover {
+  color: rgb(17, 153, 78); /* Logout text turns to original navbar color on hover */
+}
+
+.logoutButton {
+    background-color: white;
 }
 

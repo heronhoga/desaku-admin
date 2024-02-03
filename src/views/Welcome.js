@@ -7,8 +7,8 @@ function Welcome() {
   return (
     <div>
       <img src={"https://storage.googleapis.com/desaku-images/WelcomeImage.jpg"} alt="welcome"></img>
-      <h1>DESAKU DASHBOARD ADMIN</h1>
-      <Link to="/login"><Button>Login</Button></Link>
+      <h1 className="title">DESAKU DASHBOARD ADMIN</h1>
+      <Link to="/login"><Button>LOGIN</Button></Link>
     </div>
   );
 }
