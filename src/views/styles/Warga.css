@@ -37,3 +37,8 @@ th {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+.tableContainer {
+    max-height: 500px; /* Set the desired max height */
+    overflow-y: auto;
+  }

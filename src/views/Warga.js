@@ -49,7 +49,11 @@ function Warga() {
           >
             Edit
           </button>
-          <button type="button" className="btn btn-danger btn-sm btn-xs">
+          <button
+            type="button"
+            className="btn btn-danger btn-sm btn-xs"
+            onClick={() => handleDeleteClick(item.id_warga)}
+          >
             Delete
           </button>
         </div>,
@@ -77,6 +81,29 @@ function Warga() {
     navigate(`/editwarga/${id_warga}`);
   };
 
+  const handleDeleteClick = async (id_warga) => {
+    try {
+      const response = await fetch(`http://localhost:8080/admin/warga/${id_warga}`, {
+        method: "DELETE",
+        credentials: "include",
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      // Filter out the deleted row from the state
+      setRows((prevRows) => prevRows.filter((row) => row[3] !== id_warga));
+      setFilteredRows((prevFilteredRows) =>
+        prevFilteredRows.filter((row) => row[3] !== id_warga)
+      );
+      window.location.reload();
+    } catch (error) {
+      console.error("Error deleting warga:", error);
+      // Handle errors as needed
+    }
+  };
+
   return (
     <div className="wargaNav">
       <Navbar />
@@ -88,7 +115,9 @@ function Warga() {
           onChange={(event) => setSearchText(event.target.value)}
         />
       </div>
+      <div className="tableContainer">
       <Table headers={headers} rows={filteredRows} />
+      </div>
     </div>
   );
 }

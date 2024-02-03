@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 function WargaCard({ data }) {
     
-  const { id_warga, nama, tanggal_lahir, jenis_kelamin, nik, alamat } = data;
+  const { id_warga, nama, tanggal_lahir, jenis_kelamin, nik, alamat, saldo } = data;
   const navigate = useNavigate();
 
   // State to manage form data
@@ -14,6 +14,7 @@ function WargaCard({ data }) {
     jenis_kelamin: data.jenis_kelamin,
     nik: data.nik,
     alamat: data.alamat,
+    saldo: data.saldo
   });
 
   // Update form data on input change
@@ -120,6 +121,19 @@ function WargaCard({ data }) {
               value={formData.alamat}
               onChange={handleChange}
             ></textarea>
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="saldo" className="form-label">
+              Saldo
+            </label>
+            <input
+              type="number"
+              className="form-control"
+              id="saldo"
+              value={formData.saldo}
+              onChange={handleChange}
+            />
           </div>
           <br></br>
           <button type="submit" className="btn btn-primary">
