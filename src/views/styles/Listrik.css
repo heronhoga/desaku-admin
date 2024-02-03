@@ -1,0 +1,17 @@
+.searchBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchInput {
+  margin-bottom: 10px;
+}
+.searchBarContent {
+  display: flex;
+  align-items: center;
+}
+
+.btn-success,
+.addBillButtonContainer {
+  margin-left: auto;
+}
