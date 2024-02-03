@@ -1,5 +1,5 @@
 nav {
-  background-color: rgba(0, 0, 0, 0.575);
+  background-color: rgba(0, 0, 0, 0.781);
   display: flex;
   justify-content: space-between; 
   width: 100%; 
@@ -35,7 +35,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: rgb(13, 206, 212); /* Text turns to original navbar color on hover */
+  color: rgb(0, 0, 0); /* Text turns to original navbar color on hover */
 }
 
 nav ul li.logout a {
