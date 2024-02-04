@@ -7,22 +7,17 @@ import "../views/styles/Listrik.css";
 function Listrik() {
   const [showAddBillButton, setShowAddBillButton] = useState(false);
   const headers = [
-    "Total Tagihan Listrik",
-    "Tanggal Tagihan",
+    "Total Tagihan Pajak",
     "Status",
     "Nama",
     "Alamat",
+    "Action",
   ];
   const [searchText, setSearchText] = useState("");
-  const [selectedMonth, setSelectedMonth] = useState(getCurrentMonth());
+  const [selectedYear, setSelectedYear] = useState(getCurrentYear());
   const [rows, setRows] = useState([]);
   const [filteredRows, setFilteredRows] = useState([]);
   const navigate = useNavigate();
-
-  function getCurrentMonth() {
-    const month = new Date().getMonth() + 1;
-    return month < 10 ? `0${month}` : `${month}`;
-  }
 
   function getCurrentYear() {
     const year = new Date().getFullYear();
@@ -34,8 +29,7 @@ function Listrik() {
     setFilteredRows(
       rows.filter(
         (row) =>
-          row[0].toLowerCase().includes(lowercasedSearchText) ||
-          row[3].toLowerCase().includes(lowercasedSearchText)
+          row[2].toLowerCase().includes(lowercasedSearchText)
       )
     );
   }, [searchText, rows]);
@@ -44,7 +38,7 @@ function Listrik() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8080/admin/listrik/tagihan/${selectedMonth}`,
+          `http://localhost:8080/admin/pajak/tagihan/${selectedYear}`,
           {
             credentials: "include",
           }
@@ -66,11 +60,11 @@ function Listrik() {
           new Intl.NumberFormat("id-ID", {
             style: "currency",
             currency: "IDR",
-          }).format(item.total_tagihan_listrik),
-          item.tanggal_tagihan,
-          item.status,
+          }).format(item.total_tagihan_pajak),
+          item.status_bayar,
           item.nama,
           item.alamat,
+          <button className="btn btn-primary" onClick={() => navigate(`/edit-pajak/${item.id_pajak}`)}>Edit Tagihan</button>,
         ]);
 
         setRows(formattedData);
@@ -82,12 +76,12 @@ function Listrik() {
     };
 
     fetchData();
-  }, [selectedMonth]);
+  }, [selectedYear]);
 
   const handleAddBillClick = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8080/admin/listrik/tagihan/${selectedMonth}`,
+        `http://localhost:8080/admin/pajak/tagihan/${selectedYear}`,
         {
           method: "POST",
           headers: {
@@ -126,23 +120,13 @@ function Listrik() {
           value={searchText}
           onChange={(event) => setSearchText(event.target.value)}
         />
-        <label htmlFor="monthSelect">Pilih bulan tagihan Listrik : {getCurrentYear()}</label>
-        <select
-          id="monthSelect"
-          value={selectedMonth}
-          onChange={(event) => setSelectedMonth(event.target.value)}
-        >
-          {Array.from({ length: 12 }, (_, index) => {
-            const monthNumber = (index + 1).toString().padStart(2, "0");
-            return (
-              <option key={monthNumber} value={monthNumber}>
-                {new Date(2000, index).toLocaleString("en-US", {
-                  month: "long",
-                })}
-              </option>
-            );
-          })}
-        </select>
+        <label htmlFor="yearInput">Pilih tahun tagihan Pajak :</label>
+        <input
+        type="number"
+        id="yearInput"
+        value={selectedYear}
+        onChange={(event) => setSelectedYear(event.target.value)}
+        />
 
         <br></br>
         {showAddBillButton && (

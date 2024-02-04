@@ -1,0 +1,42 @@
+.custom-card {
+    border: 1px solid #ddd; /* Add border to the card */
+    border-radius: 8px; /* Optional: Add border-radius for rounded corners */
+    padding: 16px; /* Optional: Add padding to the card content */
+  }
+  
+  .card-title {
+    color: #007bff; /* Optional: Change card title color */
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px; /* Optional: Add margin below each label */
+  }
+  
+  /* Optional: Style the input and paragraph */
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+  
+  p {
+    margin-bottom: 16px;
+  }
+  
+  .btn-back {
+    background-color: #6c757d; /* Optional: Change back button background color */
+    color: #fff; /* Optional: Change back button text color */
+  }
+
+  .updateBtn {
+    margin-bottom: 10px;
+  }
+  
+  .borderBox {
+    border: 1px solid #ccc; /* You can customize the border styles */
+    padding: 8px; /* You can adjust the padding as needed */
+    border-radius: 4px; /* You can adjust the border radius as needed */
+    margin-top: 0px;
+  }
