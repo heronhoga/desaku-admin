@@ -13,9 +13,9 @@ body {
 }
 
 table {
-    width: 90%; /* reduced the width to 90% */
+    width: 90%; 
     border-collapse: collapse;
-    margin: auto; /* added margin property to center the table horizontally */
+    margin: auto; 
 }
 
 table, th, td {
@@ -38,6 +38,7 @@ th {
 }
 
 .tableContainer {
-    max-height: 500px; /* Set the desired max height */
+    max-height: 500px;
     overflow-y: auto;
+    border-bottom: 50px solid #ffffff;
   }

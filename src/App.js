@@ -5,6 +5,7 @@ import Listrik from "./views/Listrik";
 import Pajak from "./views/Pajak";
 import EditPajak from "./views/EditPajak";
 import Wifi from "./views/Wifi";
+import TagihanWifi from "./views/TagihanWifi";
 
 import { Route, Routes } from "react-router-dom";
 import Warga from "./views/Warga";
@@ -30,7 +31,8 @@ function App() {
         <Route path="/edit-pajak/:id_pajak" element={<EditPajak />} />
 
         {/* WIFI PAGES */}
-        <Route path="wifi" element={<Wifi />} />
+        <Route path="/wifi" element={<Wifi />} />
+        <Route path="/tagihanwifi" element={<TagihanWifi />} />
       </Routes>
     </div>
   );
