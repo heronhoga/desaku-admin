@@ -46,6 +46,7 @@ export const Navbar = () => {
           <li><Link to="/listrik">Listrik</Link></li>
           <li><Link to="/pajak">Pajak</Link></li>
           <li><Link to="/wifi">Wifi</Link></li>
+          <li><Link to="/tagihanwifi">Tagihan Wifi</Link></li>
           <li><Link to="/iuran">Iuran</Link></li>
           <li><Link to="/epasar">E-Pasar</Link></li>
           <li><Link to="/artikel">Artikel</Link></li>

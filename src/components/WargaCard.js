@@ -52,7 +52,7 @@ function WargaCard({ data }) {
 
   return (
     <div className="card-container text-center">
-      <div className="container mt-5">
+      <div className="container mt-5 ctWarga">
         <form onSubmit={handleSubmit}>
           <h2>Edit Warga</h2>
 

@@ -15,7 +15,6 @@ body {
 table {
     width: 90%; /* reduced the width to 90% */
     border-collapse: collapse;
-    border-radius: 15px; /* added border-radius property to make corners rounded */
     margin: auto; /* added margin property to center the table horizontally */
 }
 
