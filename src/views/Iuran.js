@@ -36,7 +36,6 @@ function Iuran() {
 
         const jsonData = await response.json();
 
-        // Format your data as needed
         const formattedData = jsonData.data.map((item) => [
           item.jumlah_iuran,
           item.tanggal_iuran,
@@ -69,8 +68,28 @@ function Iuran() {
     setFilteredRows(filteredData);
   };
 
-  const handleAddIuranClick = () => {
-    console.log('Tambahkan tagihan iuran clicked');
+  const handleAddIuranClick = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:8080/admin/iuran/tagihan/${selectedMonth}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          credentials: 'include',
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      console.log('Tagihan iuran added successfully');
+      window.location.reload(true);
+    } catch (error) {
+      console.error('Error adding tagihan iuran:', error);
+    }
   };
 
   return (
