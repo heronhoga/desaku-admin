@@ -37,7 +37,7 @@ function Iuran() {
         const jsonData = await response.json();
 
         const formattedData = jsonData.data.map((item) => [
-          item.jumlah_iuran,
+          formatCurrency(item.jumlah_iuran),
           item.tanggal_iuran,
           item.status,
           item.nama,
@@ -53,6 +53,13 @@ function Iuran() {
 
     fetchData();
   }, [selectedMonth]);
+
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat('id-ID', {
+      style: 'currency',
+      currency: 'IDR',
+    }).format(amount);
+  };
 
   const handleMonthChange = (event) => {
     setSelectedMonth(event.target.value);
@@ -99,7 +106,7 @@ function Iuran() {
       <div className="searchBar">
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Cari nama..."
           onChange={(e) => handleSearch(e.target.value)}
         />
 

@@ -7,6 +7,7 @@ import EditPajak from "./views/EditPajak";
 import Wifi from "./views/Wifi";
 import TagihanWifi from "./views/TagihanWifi";
 import Iuran from "./views/Iuran";
+import Pasar from "./views/Pasar";
 
 import { Route, Routes } from "react-router-dom";
 import Warga from "./views/Warga";
@@ -37,6 +38,9 @@ function App() {
 
         {/* IURAN PAGES */}
         <Route path="/iuran" element={<Iuran />} />
+
+        {/* E-PASAR PAGES */}
+        <Route path="/epasar" element={<Pasar />} />
       </Routes>
     </div>
   );
