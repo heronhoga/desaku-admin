@@ -40,14 +40,17 @@ useEffect(() => {
 }, []);
 
   return (
+    
     <div className="homeNav">
+      
       <Navbar/>
       <br></br>
       <h1>Selamat datang di</h1>
       <h1>DESAKU WEBSITE - ADMIN</h1>
-      <br></br>
+      <img src={"https://storage.googleapis.com/desaku-images/desakulogo.png"} alt="desaku" className='desakuimg'></img>
       <h2>Saat ini sudah ada {total} data warga yang terdaftar</h2>
       <h2>di sistem Desaku</h2>
+      
     </div>
   );
 }

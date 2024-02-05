@@ -11,3 +11,10 @@ body {
     top: 0;
     width: 100%;
 }
+
+.desakuimg {
+    width: 17rem;
+    border: 2px solid rgb(1, 168, 10);
+    border-radius: 50px;
+    margin-bottom: 1rem;
+}
