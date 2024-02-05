@@ -49,7 +49,7 @@ function Pasar() {
   };
 
   const handleEdit = (id_toko) => {
-    console.log(`Editing toko with id_toko ${id_toko}`);
+    navigate(`/epasar/edit/${id_toko}`);
   };
 
   const handleDelete = async (id_toko) => {
@@ -71,16 +71,32 @@ function Pasar() {
     }
   };
 
+  const handleCreateNew = () => {
+    navigate('/epasar/create');
+  };
+
   return (
     <div className="wargaNav">
       <Navbar />
 
-      <div className="searchBar">
-        <input
-          type="text"
-          placeholder="Cari nama toko..."
-          onChange={(e) => handleSearch(e.target.value)}
-        />
+      <div className="centeredContainer">
+        <div className="searchBar">
+          <input
+            type="text"
+            placeholder="Cari nama toko..."
+            onChange={(e) => handleSearch(e.target.value)}
+          />
+        </div>
+
+        <div className="addTokoButtonContainer">
+          <button
+            type="button"
+            className="btn btn-success createButton"
+            onClick={handleCreateNew}
+          >
+            Tambah Toko Baru
+          </button>
+        </div>
       </div>
 
       <div className="tableContainer pasar">
@@ -94,14 +110,14 @@ function Pasar() {
             <div key={row.id_toko}>
               <button
                 type="button"
-                className="btn btn-primary pasarEditBtn"
+                className="btn btn-primary pasarEditBtn mr-2"
                 onClick={() => handleEdit(row.id_toko)}
               >
                 Edit
               </button>
               <button
                 type="button"
-                className="btn btn-danger"
+                className="btn btn-danger mr-2"
                 onClick={() => handleDelete(row.id_toko)}
               >
                 Delete
