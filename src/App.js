@@ -9,6 +9,7 @@ import TagihanWifi from "./views/TagihanWifi";
 import Iuran from "./views/Iuran";
 import Pasar from "./views/Pasar";
 import EditPasar from "./views/EditPasar";
+import CreatePasar from "./views/CreatePasar";
 
 import { Route, Routes } from "react-router-dom";
 import Warga from "./views/Warga";
@@ -43,6 +44,7 @@ function App() {
         {/* E-PASAR PAGES */}
         <Route path="/epasar" element={<Pasar />} />
         <Route path="/epasar/edit/:id_toko" element={<EditPasar />} />
+        <Route path="/epasar/create" element={<CreatePasar />} />
       </Routes>
     </div>
   );
