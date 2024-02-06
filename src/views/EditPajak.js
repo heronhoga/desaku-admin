@@ -14,7 +14,6 @@ function EditPajak() {
   });
 
   useEffect(() => {
-    // Fetch data before rendering
     fetchData();
   }, [id_pajak]);
 

@@ -7,7 +7,6 @@ function WargaCard({ data }) {
   const { id_warga, nama, tanggal_lahir, jenis_kelamin, nik, alamat, saldo } = data;
   const navigate = useNavigate();
 
-  // State to manage form data
   const [formData, setFormData] = useState({
     nama: data.nama,
     tanggal_lahir: data.tanggal_lahir,
@@ -17,32 +16,26 @@ function WargaCard({ data }) {
     saldo: data.saldo
   });
 
-  // Update form data on input change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  // Handle form submission and API request
   const handleSubmit = async (e) => {
     e.preventDefault();
     const apiUrl = `http://localhost:8080/admin/warga/${data.id_warga}`;
     try {
-      // Perform API request to update data
       const response = await fetch(apiUrl, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          // Add any other headers you need, like authentication headers
         },
         credentials: "include",
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        // Data successfully updated, navigate back to /warga
         navigate("/warga");
       } else {
-        // Handle error cases
         console.error("Failed to update data");
       }
     } catch (error) {

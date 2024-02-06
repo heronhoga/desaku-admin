@@ -10,6 +10,9 @@ import Iuran from "./views/Iuran";
 import Pasar from "./views/Pasar";
 import EditPasar from "./views/EditPasar";
 import CreatePasar from "./views/CreatePasar";
+import Artikel from "./views/Artikel";
+import CreateArtikel from "./views/CreateArtikel";
+import EditArtikel from "./views/EditArtikel";
 
 import { Route, Routes } from "react-router-dom";
 import Warga from "./views/Warga";
@@ -45,6 +48,11 @@ function App() {
         <Route path="/epasar" element={<Pasar />} />
         <Route path="/epasar/edit/:id_toko" element={<EditPasar />} />
         <Route path="/epasar/create" element={<CreatePasar />} />
+
+        {/* ARTIKEL PAGES */}
+        <Route path="/artikel" element={<Artikel />} />
+        <Route path="/artikel/create" element={<CreateArtikel />} />
+        <Route path="/artikel/edit/:id_artikel" element={<EditArtikel />} />
       </Routes>
     </div>
   );

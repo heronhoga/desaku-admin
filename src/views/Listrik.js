@@ -107,7 +107,6 @@ function Listrik() {
 
       console.log("Bill created successfully:", jsonData);
 
-      // Refresh the page
       window.location.reload(true);
     } catch (error) {
       console.error("Error creating bill:", error);
@@ -153,7 +152,7 @@ function Listrik() {
           </div>
         )}
       </div>
-      <div className="tableContainer">
+      <div className="tableContainer tableListrik">
       <Table headers={headers} rows={filteredRows} />
       </div>
     </div>

@@ -100,7 +100,6 @@ function Wifi() {
 
       console.log("Action performed successfully:", jsonData);
 
-      // Refresh the page
       fetchData();
     } catch (error) {
       console.error("Error performing action:", error);
@@ -132,7 +131,7 @@ function Wifi() {
         <br />
 
       </div>
-      <div className="tableContainer">
+      <div className="tableContainer tableWifi">
         <Table headers={headers} rows={filteredRows} />
       </div>
     </div>

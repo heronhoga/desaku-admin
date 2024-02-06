@@ -5,11 +5,11 @@ nav {
   width: 100%; 
   padding-top: 15px;
   padding-bottom: 15px;
-  transition: background-color 0.5s ease; /* Add transition for a smooth color change */
+  transition: background-color 0.5s ease;
 }
 
 nav:hover {
-  background-color: white; /* Navbar turns white on hover */
+  background-color: white;
 }
 
 nav ul {
@@ -24,7 +24,7 @@ nav ul li {
 }
 
 nav ul li.logout {
-  margin-left: auto; /* Push the logout button to the right */
+  margin-left: auto;
   color: red;
 }
 
@@ -35,7 +35,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: rgb(0, 0, 0); /* Text turns to original navbar color on hover */
+  color: rgb(0, 0, 0);
 }
 
 nav ul li.logout a {
@@ -43,7 +43,7 @@ nav ul li.logout a {
 }
 
 nav ul li.logout a:hover {
-  color: rgb(17, 153, 78); /* Logout text turns to original navbar color on hover */
+  color: rgb(17, 153, 78);
 }
 
 .logoutButton {

@@ -1,0 +1,4 @@
+.tableContainer.tableWifi {
+    max-height: calc(90vh - 170px);
+    overflow-y: auto;
+  }

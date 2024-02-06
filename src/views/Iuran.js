@@ -138,7 +138,7 @@ function Iuran() {
         </div>
       )}
 
-      <div className="tableContainer iuran">
+      <div className="tableContainer iuran tableIuran">
         <Table
           headers={['Jumlah Iuran', 'Tanggal Iuran', 'Status', 'Nama', 'Alamat']}
           rows={filteredRows}

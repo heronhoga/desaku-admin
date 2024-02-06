@@ -45,6 +45,7 @@ useEffect(() => {
       
       <Navbar/>
       <br></br>
+      <br></br>
       <h1>Selamat datang di</h1>
       <h1>DESAKU WEBSITE - ADMIN</h1>
       <img src={"https://storage.googleapis.com/desaku-images/desakulogo.png"} alt="desaku" className='desakuimg'></img>

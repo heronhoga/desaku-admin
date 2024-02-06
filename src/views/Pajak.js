@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Table from "../components/Table";
 import "../views/styles/Listrik.css";
 
-function Listrik() {
+function Pajak() {
   const [showAddBillButton, setShowAddBillButton] = useState(false);
   const headers = [
     "Total Tagihan Pajak",
@@ -101,7 +101,6 @@ function Listrik() {
 
       console.log("Bill created successfully:", jsonData);
 
-      // Refresh the page
       window.location.reload(true);
     } catch (error) {
       console.error("Error creating bill:", error);
@@ -137,11 +136,11 @@ function Listrik() {
           </div>
         )}
       </div>
-      <div className="tableContainer">
+      <div className="tableContainer tablePajak">
       <Table headers={headers} rows={filteredRows} />
       </div>
     </div>
   );
 }
 
-export default Listrik;
+export default Pajak;

@@ -92,7 +92,6 @@ function Warga() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      // Filter out the deleted row from the state
       setRows((prevRows) => prevRows.filter((row) => row[3] !== id_warga));
       setFilteredRows((prevFilteredRows) =>
         prevFilteredRows.filter((row) => row[3] !== id_warga)
@@ -100,7 +99,6 @@ function Warga() {
       window.location.reload();
     } catch (error) {
       console.error("Error deleting warga:", error);
-      // Handle errors as needed
     }
   };
 

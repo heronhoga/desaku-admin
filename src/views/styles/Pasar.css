@@ -7,3 +7,8 @@
     margin-bottom: 10px;
 }
 
+.tableContainer.tablePajak {
+    max-height: calc(90vh - 175px);
+    overflow-y: auto;
+  }
+

@@ -1,0 +1,4 @@
+.tableContainer.tableIuran {
+    max-height: calc(90vh - 140px);
+    overflow-y: auto;
+  }

@@ -13,7 +13,7 @@ body {
 }
 
 table {
-    width: 90%; 
+    width: 95vw; 
     border-collapse: collapse;
     margin: auto; 
 }
@@ -38,7 +38,7 @@ th {
 }
 
 .tableContainer {
-    max-height: 500px;
+    max-height: calc(90vh - 80px);
     overflow-y: auto;
-    border-bottom: 50px solid #ffffff;
+
   }

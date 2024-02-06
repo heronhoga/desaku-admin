@@ -11,8 +11,8 @@
 .card {
   width: 300px;
   padding: 20px;
-  margin: 0 auto; /* centers the card */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* optional: adds a shadow to the card */
+  margin: 0 auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .form-group {

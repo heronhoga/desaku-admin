@@ -18,7 +18,6 @@ export const Navbar = () => {
       throw new Error('Failed to logout');
     }
 
-    // Delete all cookies
     document.cookie.split(";").forEach((cookie) => {
       document.cookie = cookie
         .replace(/^ +/, "")

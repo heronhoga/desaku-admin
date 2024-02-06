@@ -1,0 +1,8 @@
+.tambahButtonArtikel {
+    margin-top: 20px;
+}
+
+.tableContainer.tableArtikel {
+    max-height: calc(90vh - 140px);
+    overflow-y: auto;
+  }

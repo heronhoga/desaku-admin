@@ -15,3 +15,8 @@
 .addBillButtonContainer {
   margin-left: auto;
 }
+
+.tableContainer.tableListrik {
+  max-height: calc(90vh - 170px);
+  overflow-y: auto;
+}

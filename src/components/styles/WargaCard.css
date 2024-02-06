@@ -1,6 +1,6 @@
 .ctWarga {
-    max-width: 1000; /* Increase the max-width for a wider container within the card */
-    margin: auto; /* Center the container horizontally */
+    max-width: 1000;
+    margin: auto;
     width: 600px;
   }
   
@@ -70,8 +70,8 @@
     padding: 20px;
     border-radius: 0.25rem;
     margin-top: 50px;
-    max-width: 600px; /* Increase the max-width for a wider card */
-    margin: auto; /* Center the card horizontally */
+    max-width: 600px;
+    margin: auto;
   }
   
   

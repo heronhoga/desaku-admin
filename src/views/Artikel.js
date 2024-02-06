@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Navbar } from '../components/Navbar';
 import Table from '../components/Table';
 import '../views/styles/Pasar.css';
-import '../views/styles/Epasar.css'
 import { useNavigate } from 'react-router-dom';
+import "../views/styles/Artikel.css"
 
-function Pasar() {
+function Artikel() {
   const [rows, setRows] = useState([]);
   const [filteredRows, setFilteredRows] = useState([]);
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ function Pasar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/admin/epasar', {
+        const response = await fetch('http://localhost:8080/admin/artikel', {
           credentials: 'include',
         });
 
@@ -24,11 +24,9 @@ function Pasar() {
         const jsonData = await response.json();
 
         const formattedData = jsonData.data.map((item) => ({
-          id_toko: item.id_toko,
-          nama_toko: item.nama_toko,
-          nama_pedagang: item.nama_pedagang,
-          jenis_dagangan: item.jenis_dagangan,
-          status: item.status,
+          id_artikel: item.id_artikel,
+          judul: item.judul,
+          isi: item.isi,
         }));
 
         setRows(formattedData);
@@ -43,37 +41,38 @@ function Pasar() {
 
   const handleSearch = (searchTerm) => {
     const filteredData = rows.filter((row) => {
-      return row.nama_toko.toLowerCase().includes(searchTerm.toLowerCase());
+      return row.judul.toLowerCase().includes(searchTerm.toLowerCase());
     });
 
     setFilteredRows(filteredData);
   };
 
-  const handleEdit = (id_toko) => {
-    navigate(`/epasar/edit/${id_toko}`);
+  const handleEdit = (id_artikel) => {
+    navigate(`/artikel/edit/${id_artikel}`);
   };
 
-  const handleDelete = async (id_toko) => {
+  const handleDelete = async (id_artikel) => {
     try {
-      const response = await fetch(`http://localhost:8080/admin/epasar/${id_toko}`, {
+      const response = await fetch(`http://localhost:8080/admin/artikel/${id_artikel}`, {
         method: 'DELETE',
         credentials: 'include',
       });
-
+  
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-
-      console.log(`Toko with id_toko ${id_toko} deleted successfully`);
-
-      window.location.reload(true);
+  
+      console.log(`Artikel with id_artikel ${id_artikel} deleted successfully`);
+  
+      window.location.reload();
     } catch (error) {
-      console.error(`Error deleting toko with id_toko ${id_toko}:`, error);
+      console.error(`Error deleting artikel with id_artikel ${id_artikel}:`, error);
     }
   };
+  
 
-  const handleCreateNew = () => {
-    navigate('/epasar/create');
+  const handleTambahArtikel = () => {
+    navigate('/artikel/create');
   };
 
   return (
@@ -84,42 +83,37 @@ function Pasar() {
         <div className="searchBar">
           <input
             type="text"
-            placeholder="Cari nama toko..."
+            placeholder="Cari judul artikel..."
             onChange={(e) => handleSearch(e.target.value)}
           />
-        </div>
-
-        <div className="addTokoButtonContainer">
           <button
             type="button"
-            className="btn btn-success createButton"
-            onClick={handleCreateNew}
+            className="btn btn-success ml-2 tambahButtonArtikel"
+            onClick={handleTambahArtikel}
           >
-            Tambah Toko Baru
+            Tambah Artikel
           </button>
         </div>
       </div>
 
-      <div className="tableContainer pasar tablePasar">
+      <div className="tableContainer tableArtikel">
         <Table
-          headers={['Nama Toko', 'Nama Pedagang', 'Jenis Dagangan', 'Status', 'Action']}
+          headers={['Judul', 'Isi', 'Action']}
           rows={filteredRows.map((row) => [
-            row.nama_toko,
-            row.nama_pedagang,
-            row.jenis_dagangan,
-            row.status === '1' ? 'Aktif' : 'Non-Aktif',
-            <div key={row.id_toko}>
+            row.judul,
+            row.isi,
+            <div key={row.id_artikel}>
               <button
                 type="button"
                 className="btn btn-primary pasarEditBtn mr-2"
-                onClick={() => handleEdit(row.id_toko)}
+                onClick={() => handleEdit(row.id_artikel)}
               >
                 Edit
               </button>
               <button
                 type="button"
-                className="btn btn-danger mr-2"
-                onClick={() => handleDelete(row.id_toko)}
+                className="btn btn-danger"
+                onClick={() => handleDelete(row.id_artikel)}
               >
                 Delete
               </button>
@@ -131,4 +125,4 @@ function Pasar() {
   );
 }
 
-export default Pasar;
+export default Artikel;
